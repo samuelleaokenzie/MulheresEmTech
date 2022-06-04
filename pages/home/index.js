@@ -1,0 +1,103 @@
+const jobsData = [
+  {
+    id: 0,
+    title: "Pessoa desenvolvedora front-end - React",
+    enterprise: "Kenzie",
+    location: "Curitiba",
+    descrition:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    modalities: ["Hibrido", "Presencial"],
+  },
+  {
+    id: 1,
+    title: "Pessoa desenvolvedora back-end - Node JS",
+    enterprise: "Brazilians in Tech",
+    location: "Rio de Janeiro",
+    descrition:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    modalities: ["Home Office", "Presencial"],
+  },
+];
+
+let jobsSelect = [];
+let $jobsCardsArea = document.querySelector(".jobs");
+let $jobSelectedCardsArea = document.querySelector(".jobs-selected-render");
+
+jobsData.map((job) => {
+  $jobsCardsArea.insertAdjacentHTML(
+    "beforeend",
+    `
+    <div class="jobs-card">
+        <h4 class="title-4 color-grey-1">
+        ${job.title}
+        </h4>
+        <div class="jobs-card-details flex-row">
+            <span class="text-3 color-grey-2">${job.enterprise}</span>
+            <span class="text-3 color-grey-2">${job.location}</span>
+        </div>
+        <p class="text-2 color-grey-2">${job.descrition}</p>
+        <div class="jobs-card-footer">
+      
+        <div>
+        ${job.modalities
+          .map(
+            (modality) =>
+              `<span class="jobs-card-modality text-3">${modality}</span>`
+          )
+          .join("")}
+        </div>
+        <button type="button" class="button-little-default" onclick="selectJob(${
+          job.id
+        })">Candidatar</button>
+        </div>
+    </div>
+    `
+  );
+});
+
+const selectJobRender = (data) => {
+  data
+    .map((e) =>
+      $jobSelectedCardsArea.insertAdjacentHTML(
+        "afterbegin",
+        `
+          <div class="jobs-selected-card" id="jobs-selected-card-${e.id}">
+            <div class="jobs-selected-card-header">
+              <h5 class="title-5 jobs-selected-card-title">
+                ${e.title}
+              </h5>
+              <button class="button-icon" onclick="removeJob(${e.id})">
+                <img src="../../assets/img/trash.svg" alt="" />
+              </button>
+            </div>
+            <div class="jobs-selected-card-details flex-row">
+              <span class="text-3 color-grey-2">${e.enterprise}</span>
+              <span class="text-3 color-grey-2">${e.location}</span>
+            </div>
+        </div>
+        
+        `
+      )
+    )
+    .join("");
+};
+
+const selectJob = (id) => {
+  const analytics = jobsSelect.some((e) => e.id === Number(id));
+
+  if (!analytics) {
+    const newdata = jobsData.filter((job) => job.id === Number(id));
+    jobsSelect.push(...newdata);
+
+    selectJobRender(newdata);
+  }
+
+  return jobsSelect;
+};
+
+const removeJob = (id) => {
+  const newdata = jobsSelect.filter((job) => job.id !== Number(id));
+  jobsSelect = [...newdata];
+  document.querySelector(`#jobs-selected-card-${id}`).remove()
+  return jobsSelect;
+};

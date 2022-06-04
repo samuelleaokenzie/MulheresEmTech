@@ -13,3 +13,10 @@
     justify-content: space-between;
     align-items: flex-end;
 }
+
+.jobs-card-modality{
+    background-color: var(--color-grey-4);
+    margin-right: 16px;
+    padding: 4px 12px;
+    border-radius: var(--radius-default);
+}
