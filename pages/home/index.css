@@ -21,6 +21,8 @@ main {
 .jobs-selected {
   background-color: var(--color-grey-6);
   width: 38%;
+  position: sticky;
+  border-radius: var(--radius-default);
 }
 
 @media (max-width: 998px) {
