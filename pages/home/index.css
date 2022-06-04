@@ -1,5 +1,6 @@
 .header {
   background-image: url(../../assets/img/header-bg.jpg);
+  background-attachment: fixed;
   padding: 68px 0;
 }
 
