@@ -1,0 +1,15 @@
+.jobs-card{
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 100%;
+    background-color: var(--color-grey-6);
+    padding: 38px;
+    border-radius: var(--radius-default);
+}
+
+.jobs-card .jobs-card-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}

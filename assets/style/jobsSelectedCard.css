@@ -1,0 +1,27 @@
+.jobs-selected .jobs-selected-title {
+  padding: 32px;
+}
+
+.jobs-selected-card {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-bottom: 2px solid var(--color-grey-5);
+  background-color: var(--color-grey-6);
+}
+
+.jobs-selected-card:hover {
+  background-color: var(--color-grey-4);
+}
+
+.jobs-selected-card-title {
+  height: 54px;
+  padding-right: 32px;
+}
+
+.jobs-selected-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}

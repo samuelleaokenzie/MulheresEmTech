@@ -1,0 +1,38 @@
+.header {
+  background-image: url(../../assets/img/header-bg.jpg);
+  padding: 68px 0;
+}
+
+body {
+  background-color: var(--color-grey-5);
+}
+
+main {
+  padding: 50px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.jobs {
+  width: 60%;
+}
+
+.jobs-selected {
+  background-color: var(--color-grey-6);
+  width: 38%;
+}
+
+@media (max-width: 998px) {
+  main {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .jobs {
+    width: 100%;
+  }
+
+  .jobs-selected {
+    width: 100%;
+  }
+}
