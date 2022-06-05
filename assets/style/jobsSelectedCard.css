@@ -1,9 +1,13 @@
+:root{
+  --paddingElements: 32px;
+}
+
 .jobs-selected .jobs-selected-title {
-  padding: 32px;
+  padding: var(--paddingElements);
 }
 
 .jobs-selected-card {
-  padding: 32px;
+  padding: var(--paddingElements);
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -17,11 +21,16 @@
 
 .jobs-selected-card-title {
   height: 54px;
-  padding-right: 32px;
+  padding-right: var(--paddingElements);
 }
 
 .jobs-selected-card-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+}
+
+
+.jobs-selected-no-items{
+  padding: var(--paddingElements);
 }

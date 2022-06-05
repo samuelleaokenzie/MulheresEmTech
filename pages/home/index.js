@@ -88,7 +88,7 @@ const selectJob = (id) => {
   if (!analytics) {
     const newdata = jobsData.filter((job) => job.id === Number(id));
     jobsSelect.push(...newdata);
-
+    analyticsItems()
     selectJobRender(newdata);
   }
 
@@ -98,6 +98,27 @@ const selectJob = (id) => {
 const removeJob = (id) => {
   const newdata = jobsSelect.filter((job) => job.id !== Number(id));
   jobsSelect = [...newdata];
-  document.querySelector(`#jobs-selected-card-${id}`).remove()
+  document.querySelector(`#jobs-selected-card-${id}`).remove();
+
+  analyticsItems()
+
   return jobsSelect;
 };
+
+const analyticsItems = () => {
+  let $jobsSelectedNoItems = document.querySelector(".jobs-selected-no-items");
+
+  if (jobsSelect.length === 0) {
+    $jobSelectedCardsArea.insertAdjacentHTML(
+      "beforebegin",
+      `<div class="jobs-selected-no-items flex-column">
+        <p>Você ainda não aplicou para nenhuma vaga</p>
+        <img src="../../assets/img/no-items.svg" />
+      </div>`
+    );
+  }else{
+    $jobsSelectedNoItems !== null  && $jobsSelectedNoItems.remove() 
+  }
+};
+
+analyticsItems()
