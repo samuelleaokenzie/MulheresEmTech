@@ -46,9 +46,9 @@ jobsData.map((job) => {
           )
           .join("")}
         </div>
-        <a href="#vagasSelecionadas" class="button-little-default" onclick="selectJob(${
+        <a href="#vagasSelecionadas" class="button-little-default bt-select-job" id="jobs-card-${
           job.id
-        })">Candidatar</a>
+        }" onclick="selectJob(this, ${job.id})">Candidatar</a>
         </div>
     </div>
     `
@@ -83,7 +83,7 @@ const selectJobRender = (data) => {
     .join("");
 };
 
-const selectJob = (id) => {
+const selectJob = (event, id) => {
   const analytics = jobsSelect.some((e) => e.id === Number(id));
 
   if (!analytics) {
@@ -91,6 +91,10 @@ const selectJob = (id) => {
     jobsSelect.push(...newdata);
     analyticsItems();
     selectJobRender(newdata);
+    event.innerText = "Remover candidatura";
+  }else{
+    removeJob(id);
+    event.innerText = "Candidatar";
   }
 
   return jobsSelect;
@@ -99,8 +103,10 @@ const selectJob = (id) => {
 const removeJob = (id) => {
   const newdata = jobsSelect.filter((job) => job.id !== Number(id));
   jobsSelect = [...newdata];
-  document.querySelector(`#jobs-selected-card-${id}`).remove();
-
+  const $buttonRemove = document.querySelector(`#jobs-selected-card-${id}`);
+  $buttonRemove !== null && $buttonRemove.remove();
+  const $buttonToggle = document.querySelector(`#jobs-card-${id}`)
+  $buttonToggle.innerText = "Candidatar"
   analyticsItems();
 
   return jobsSelect;
