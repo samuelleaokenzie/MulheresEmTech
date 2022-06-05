@@ -46,9 +46,9 @@ jobsData.map((job) => {
           )
           .join("")}
         </div>
-        <button type="button" class="button-little-default" onclick="selectJob(${
+        <a href="#vagasSelecionadas" class="button-little-default" onclick="selectJob(${
           job.id
-        })">Candidatar</button>
+        })">Candidatar</a>
         </div>
     </div>
     `
@@ -68,7 +68,7 @@ const selectJobRender = (data) => {
               </h5>
               <button class="button-icon" onclick="removeJob(${e.id})" 
                 title="Desejar cancelar a candidatura para esta vaga? Se sim, clique aqui.">
-                <img src="../../assets/img/trash.svg" alt="" />
+                <img src="../../assets/img/trash.svg" alt="Ícone Simbolizando uma lixeira" />
               </button>
             </div>
             <div class="jobs-selected-card-details flex-row">

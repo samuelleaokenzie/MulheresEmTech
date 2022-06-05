@@ -1,6 +1,7 @@
 .button-big-default{
     background-color: var(--color-brand-1);
     color: var(--color-grey-6);
+    font-size: 1rem;
     text-decoration: none;
     height: 48px;
     display: flex;
@@ -24,6 +25,7 @@
     text-decoration: none;
     height: 38px;
     display: flex;
+    font-size: 1rem;
     align-items: center;
     justify-content: center;
     padding: 0 28px;
