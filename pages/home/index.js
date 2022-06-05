@@ -66,7 +66,8 @@ const selectJobRender = (data) => {
               <h5 class="title-5 jobs-selected-card-title">
                 ${e.title}
               </h5>
-              <button class="button-icon" onclick="removeJob(${e.id})">
+              <button class="button-icon" onclick="removeJob(${e.id})" 
+                title="Desejar cancelar a candidatura para esta vaga? Se sim, clique aqui.">
                 <img src="../../assets/img/trash.svg" alt="" />
               </button>
             </div>
@@ -88,7 +89,7 @@ const selectJob = (id) => {
   if (!analytics) {
     const newdata = jobsData.filter((job) => job.id === Number(id));
     jobsSelect.push(...newdata);
-    analyticsItems()
+    analyticsItems();
     selectJobRender(newdata);
   }
 
@@ -100,7 +101,7 @@ const removeJob = (id) => {
   jobsSelect = [...newdata];
   document.querySelector(`#jobs-selected-card-${id}`).remove();
 
-  analyticsItems()
+  analyticsItems();
 
   return jobsSelect;
 };
@@ -113,12 +114,14 @@ const analyticsItems = () => {
       "beforebegin",
       `<div class="jobs-selected-no-items flex-column">
         <p>Você ainda não aplicou para nenhuma vaga</p>
-        <img src="../../assets/img/no-items.svg" />
+        <img src="../../assets/img/no-items.svg" 
+        alt="Imagem representando a ausência de vagas selecionadas" 
+        title="Imagem representando a ausência de vagas selecionadas" />
       </div>`
     );
-  }else{
-    $jobsSelectedNoItems !== null  && $jobsSelectedNoItems.remove() 
+  } else {
+    $jobsSelectedNoItems !== null && $jobsSelectedNoItems.remove();
   }
 };
 
-analyticsItems()
+analyticsItems();

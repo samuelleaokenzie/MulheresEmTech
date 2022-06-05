@@ -20,3 +20,15 @@
     padding: 4px 12px;
     border-radius: var(--radius-default);
 }
+
+@media(max-width: 991px){
+    .jobs-card-footer{
+        flex-direction: column;
+        align-items: baseline !important;
+        gap: 2rem;
+    }
+
+    .jobs-card-footer .button-little-default{
+        width: 100%;
+    }
+}

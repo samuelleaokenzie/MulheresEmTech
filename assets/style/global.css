@@ -21,6 +21,14 @@ img {
   --color-grey-5:  #f1f3f5;
   --color-grey-6:  #ffffff;
   --radius-default: 8px;
+  --title-1: 3rem;
+  --title-2: 2.5rem;
+  --title-3: 2rem;
+  --title-4: 1.375rem;
+  --title-5: 1.125rem;
+  --text-1: 1.125rem;
+  --text-2: 1rem;
+  --text-3: 0.875rem;
 }
 
 body {
@@ -45,4 +53,13 @@ body {
   display: flex;
   align-items: flex-start;
   gap: 36px;
+}
+
+@media(max-width: 991px){
+  :root {
+    --title-1: calc(3rem / 1.2);
+    --title-2: calc(2.5rem / 1.2);
+    --title-3: calc(2rem / 1.2);
+    --text-1: calc(1.125rem / 1.2);
+  }
 }
