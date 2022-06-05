@@ -113,7 +113,7 @@ const analyticsItems = () => {
     $jobSelectedCardsArea.insertAdjacentHTML(
       "beforebegin",
       `<div class="jobs-selected-no-items flex-column">
-        <p>Você ainda não aplicou para nenhuma vaga</p>
+        <p class="text-2">Você ainda não aplicou para nenhuma vaga</p>
         <img src="../../assets/img/no-items.svg" 
         alt="Imagem representando a ausência de vagas selecionadas" 
         title="Imagem representando a ausência de vagas selecionadas" />
