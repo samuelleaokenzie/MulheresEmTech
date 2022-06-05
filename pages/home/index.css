@@ -4,6 +4,10 @@
   padding: 68px 0;
 }
 
+.header-main{
+  max-width: 70%;
+}
+
 body {
   background-color: var(--color-grey-5);
 }
@@ -37,5 +41,9 @@ main {
 
   .jobs-selected {
     width: 100%;
+  }
+
+  .header-main{
+    max-width: 100%;
   }
 }
