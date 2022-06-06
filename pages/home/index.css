@@ -1,6 +1,8 @@
 .header {
   background-image: url(../../assets/img/header-bg.jpg);
   background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
   padding: 68px 0;
 }
 
