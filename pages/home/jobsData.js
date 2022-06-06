@@ -18,8 +18,8 @@ const jobsData = [
     modalities: ["Home Office", "Presencial"],
   },
   {
-    id: 1,
-    title: "Pessoa desenvolvedora back-end - Node JS",
+    id: 2,
+    title: "Pessoa desenvolvedora Fullstack - Node JS",
     enterprise: "Brazilians in Tech",
     location: "Rio de Janeiro",
     descrition:
