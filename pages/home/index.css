@@ -30,6 +30,7 @@ main {
   width: 38%;
   position: sticky;
   border-radius: var(--radius-default);
+  top: 2rem;
 }
 
 @media (max-width: 998px) {
