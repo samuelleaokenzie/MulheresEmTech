@@ -45,7 +45,7 @@ const selectJobRender = (data) => {
               <h5 class="title-5 jobs-selected-card-title">
                 ${e.title}
               </h5>
-              <button class="button-icon" onclick="removeJob(${e.id})" 
+              <button class="button-icon" data-id="${e.id}" onclick="removeJob(${e.id})" 
                 title="Desejar cancelar a candidatura para esta vaga? Se sim, clique aqui.">
                 <img src="../../assets/img/trash.svg" alt="Ícone Simbolizando uma lixeira" />
               </button>
@@ -62,15 +62,16 @@ const selectJobRender = (data) => {
     .join("");
 };
 
-const selectJob = (event, id) => {
+const selectJob = (event = HTMLElement, id) => {
   const analytics = jobsSelect.some((e) => e.id === Number(id));
 
   if (!analytics) {
     const newdata = jobsData.filter((job) => job.id === Number(id));
     jobsSelect.push(...newdata);
-    analyticsItems();
+    window.localStorage.setItem("data-jobs", JSON.stringify(jobsSelect))
     selectJobRender(newdata);
     event.innerText = "Remover candidatura";
+    analyticsItems();
   }else{
     removeJob(id);
     event.innerText = "Candidatar";
@@ -82,6 +83,7 @@ const selectJob = (event, id) => {
 const removeJob = (id) => {
   const newdata = jobsSelect.filter((job) => job.id !== Number(id));
   jobsSelect = [...newdata];
+  window.localStorage.setItem("data-jobs", JSON.stringify(jobsSelect))
   const $buttonRemove = document.querySelector(`#jobs-selected-card-${id}`);
   $buttonRemove !== null && $buttonRemove.remove();
   const $buttonToggle = document.querySelector(`#jobs-card-${id}`)
@@ -91,10 +93,13 @@ const removeJob = (id) => {
   return jobsSelect;
 };
 
+let selectJobLocalStorage = JSON.parse(window.localStorage.getItem("data-jobs"))
+
 const analyticsItems = () => {
   let $jobsSelectedNoItems = document.querySelector(".jobs-selected-no-items");
+  let $jobsSelectedItem = document.querySelector(".jobs-selected-card");
 
-  if (jobsSelect.length === 0) {
+  if ($jobsSelectedItem == null) {
     $jobSelectedCardsArea.insertAdjacentHTML(
       "beforebegin",
       `<div class="jobs-selected-no-items flex-column">
@@ -109,4 +114,16 @@ const analyticsItems = () => {
   }
 };
 
-analyticsItems();
+if(selectJobLocalStorage.length > 0){  
+  let idJobsSelected = selectJobLocalStorage.map((element)=>{
+      return element.id
+  })
+
+  idJobsSelected.forEach((element)=>{
+   selectJob(document.getElementById(`jobs-card-${element}`), element)
+  })
+}
+
+analyticsItems()
+
+
