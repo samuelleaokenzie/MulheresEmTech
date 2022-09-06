@@ -114,15 +114,18 @@ const analyticsItems = () => {
   }
 };
 
-if(selectJobLocalStorage.length > 0){  
-  let idJobsSelected = selectJobLocalStorage.map((element)=>{
-      return element.id
-  })
-
-  idJobsSelected.forEach((element)=>{
-   selectJob(document.getElementById(`jobs-card-${element}`), element)
-  })
+if(selectJobLocalStorage){
+  if(selectJobLocalStorage.length > 0){  
+    let idJobsSelected = selectJobLocalStorage.map((element)=>{
+        return element.id
+    })
+  
+    idJobsSelected.forEach((element)=>{
+     selectJob(document.getElementById(`jobs-card-${element}`), element)
+    })
+  }
 }
+
 
 analyticsItems()
 
