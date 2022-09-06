@@ -1,5 +1,5 @@
 :root{
-  --paddingElements: 32px;
+  --paddingElements: 2rem;
 }
 
 .jobs-selected .jobs-selected-title {
@@ -10,8 +10,8 @@
   padding: var(--paddingElements);
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  border-bottom: 2px solid var(--color-grey-5);
+  gap: 1.25rem;
+  border-bottom: 0.125rem solid var(--color-grey-5);
   background-color: var(--color-grey-6);
 }
 
@@ -20,7 +20,7 @@
 }
 
 .jobs-selected-card-title {
-  height: 54px;
+  height: 3.375rem;
   padding-right: var(--paddingElements);
 }
 

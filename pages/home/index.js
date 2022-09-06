@@ -7,9 +7,9 @@ jobsData.map((job) => {
     "beforeend",
     `
     <div class="jobs-card">
-        <h4 class="title-4 color-grey-1">
+        <h3 class="title-4 color-grey-1">
         ${job.title}
-        </h4>
+        </h3>
         <div class="jobs-card-details flex-row">
             <span class="text-3 color-grey-2">${job.enterprise}</span>
             <span class="text-3 color-grey-2">${job.location}</span>
@@ -42,11 +42,11 @@ const selectJobRender = (data) => {
         `
           <div class="jobs-selected-card" id="jobs-selected-card-${e.id}">
             <div class="jobs-selected-card-header">
-              <h5 class="title-5 jobs-selected-card-title">
+              <h3 class="title-5 jobs-selected-card-title">
                 ${e.title}
-              </h5>
-              <button class="button-icon" data-id="${e.id}" onclick="removeJob(${e.id})" 
-                title="Desejar cancelar a candidatura para esta vaga? Se sim, clique aqui.">
+              </h3>
+              <button type="button" class="button-icon" data-id="${e.id}" onclick="removeJob(${e.id})" 
+                aria-label="Desejar cancelar a candidatura para esta vaga? Se sim, clique aqui.">
                 <img src="../../assets/img/trash.svg" alt="Ícone Simbolizando uma lixeira" />
               </button>
             </div>

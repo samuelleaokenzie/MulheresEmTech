@@ -20,7 +20,7 @@ img {
   --color-grey-4:  #e9ecef;
   --color-grey-5:  #f1f3f5;
   --color-grey-6:  #ffffff;
-  --radius-default: 8px;
+  --radius-default: 0.5rem;
   --title-1: 3rem;
   --title-2: 2.5rem;
   --title-3: 2rem;
@@ -38,21 +38,21 @@ body {
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .flex-column {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 36px;
+  gap: 2.25rem;
 }
 
 .flex-row {
   display: flex;
   align-items: flex-start;
-  gap: 36px;
+  gap: 2.25rem;
 }
 
 @media(max-width: 991px){
