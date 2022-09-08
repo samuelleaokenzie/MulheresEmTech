@@ -3,10 +3,11 @@
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 6.25rem 0;
+  padding: 10rem 0;
+  background-position: center top;
 }
 
-.header-main{
+.header-main {
   max-width: 70%;
 }
 
@@ -19,6 +20,13 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.flex-1 {
+  flex: 1;
+  min-width: 100%;
+  margin-bottom: 3rem;
 }
 
 .jobs {
@@ -46,7 +54,7 @@ main {
     width: 100%;
   }
 
-  .header-main{
+  .header-main {
     max-width: 100%;
   }
 }
