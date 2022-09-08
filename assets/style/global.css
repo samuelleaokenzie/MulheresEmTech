@@ -36,10 +36,16 @@ body {
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 76rem;
   margin: 0 auto;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+@media(min-width: 1500px){
+  .container {
+    max-width: 90rem;
+  }
 }
 
 .flex-column {
